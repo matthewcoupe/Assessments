@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Intro";
+}
+<div class="jumbotron">
+    <h1>CPPE History Test</h1>
+
+    <br />
+</div>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3 col-xs-12">
+
+        <div class="panel panel-default ass-welcome-1">
+            <div class="panel-heading">This is your first attempt at this assessment.</div>
+            <div class="panel-body">
+
+                <div class="col-md-12">
+
+                    <div class="row">
+
+                        <p>Please make some brief notes below about how you have prepared for this e-assessment.</p>
+                        <div class="col-md-12 col-xs-12">
+                            <div class="row form-group">
+
+                                <textarea class="form-control col-md-12" style="min-width:100%;" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group voffset-top-20">
+                            <p>Please tell us why you are undertaking this e-assessment section:</p>
+                            <div class="col-md-12 col-xs-12">
+
+                                <div class="row form-group radio-hide-group assessment-group">
+
+                                    <input type="radio" id="radio11" name="radios1" value="all">
+                                    <label for="radio11" class="btn btn-default col-md-12 col-xs-12 assessment-radio">I have identified this as a CPD need</label>
+
+                                    <input type="radio" id="radio12" name="radios1" value="false">
+                                    <label for="radio12" class="btn btn-default col-md-12 col-xs-12 assessment-radio">I have completed the relevant CPPE learning programme</label>
+
+                                    <input type="radio" id="radio13" name="radios1" value="true">
+                                    <label for="radio13" class="btn btn-default col-md-12 col-xs-12 assessment-radio">I have been asked to by my employer for a new service</label>
+
+                                    <input type="radio" id="radio14" name="radios1" value="true">
+                                    <label for="radio14" class="btn btn-default col-md-12 col-xs-12 assessment-radio">A commissioning body requirement for a new service</label>
+
+                                    <input type="radio" id="radio15" name="radios1" value="true">
+                                    <label for="radio15" class="btn btn-default col-md-12 col-xs-12 assessment-radio">No obvious reason, just personal interest</label>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success ass-intro">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-default ass-welcome-2" style="display:none;">
+            <div class="panel-heading">You recently failed a part of this assessment.</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+
+
+                        <p>Please tell us what learning and actions you have taken since your last attempt to help you prepare for this next attempt.</p>
+                        <div class="col-md-12">
+                            <div class="row form-group">
+
+                                <textarea style="min-width:100%;" class="form-control col-md-12"  rows="4"></textarea>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="panel-footer">
+                <div class="btn-group">
+                    <form action="/home/index">
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

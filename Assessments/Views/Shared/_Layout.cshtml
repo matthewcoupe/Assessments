@@ -5,40 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/datatables.bootstrap.min.css")
+    @Styles.Render("~/Content/header.css")
     @Scripts.Render("~/bundles/modernizr")
+
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .starter-template {
+            padding: 40px 15px;
+            text-align: center;
+        }
+
+        a.pwLink {
+            opacity: 0.7;
+        }
+
+            a.pwLink:hover {
+                text-decoration: none;
+                opacity: 1;
+            }
+    </style>
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+    <div id="wrapper">
+        <header>
+            <div id="mainHead" class="container clearfix">
+                <div class="col-xs-10 col-sm-5 col-md-4 col-lg-3" style="padding-left:0px;"><img id="logo" src="http://www.cppe.ac.uk/images/logo-icons.jpg" /></div>
+                <button type="button" class="btn btn-danger col-xs-2 col-sm-2 col-md-2 col-lg-2" data-toggle="modal" data-target="#exitModal">Exit assessment</button>
+                <div class="hidden-xs hidden-sm col-md-4 col-lg-3 col-md-offset-2 col-lg-offset-4" style="padding-right:0px;"><img id="logo" src="http://www.cppe.ac.uk/images/logo-strap.jpg" style="float:right;" /></div>
+
+                <div class="col-xs-2 hidden-sm">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#cppeLinks">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+            <img id="multiBand" src="http://www.cppe.ac.uk/images/header_border.png" width="100%" />
+           
+        </header><!-- /header -->
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+   
+                  
+
+    <!-- Modal -->
+    <div id="exitModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">How was your experience today?</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row feedback-smileys">
+                        <div class="col-md-3 col-md-offset-2 col-xs-4 col-xs-offset-1">
+                            <input type="radio" id="radiofeedback1" name="radiofeedback" value="happy">
+                            <label for="radiofeedback1" class="feedback-smiley-happy"><img src="~/Content/happy.png" class="img-responsive" /></label>
+
+
+                            
+                        </div>
+                        <div class="col-md-3 col-md-offset-2 col-xs-4 col-xs-offset-2">
+                            <input type="radio" id="radiofeedback2" name="radiofeedback" value="sad">
+                            <label for="radiofeedback2" class="feedback-smiley-sad"><img src="~/Content/sad.png" class="img-responsive" /></label>
+
+
+                            
+                        </div>
+                    </div>
+                    <div class="row voffset-top-20">
+                        <div class="col-md-8 col-md-offset-2">
+                            <textarea class="form-control " rows="4" style="min-width:100%;" id="feedbacktextArea" placeholder="Share your thoughts..."></textarea>
+                        </div>
+                    </div>
+                    <div class="row voffset-top-20">
+                        <div class="col-md-8 col-md-offset-2">
+                            <form action="/home/intro">
+                                <input type="submit" class="btn btn-danger" value="Exit assessment" />
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Back to assessment</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+
+                </div>
             </div>
+
         </div>
     </div>
-    <div class="container body-content">
+
+
+
+    <div class="container body-content" id="main">
+   
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/scripts/dataTables.bootstrap.min.js")
+    @Scripts.Render("~/scripts/jquery.dataTables.min.js")
+    @Scripts.Render("~/scripts/site.js")
+
+
     @RenderSection("scripts", required: false)
 </body>
 </html>

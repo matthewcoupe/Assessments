@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Multiple choice question";
 }
 <script type="text/javascript">
     $('input.assessment-radio').change(function () {
@@ -8,6 +8,8 @@
             $(this).parent('label').addClass('checked');
         }
     }).change();</script>
+
+
 <div class="jumbotron">
     <h1>CPPE History Test</h1>
     <h2>Section 2</h2>
@@ -17,7 +19,9 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-2 col-md-offset-10 alert alert-info"><p>Time remaining: 30:00</p></div>
+        <div class="col-md-3 col-md-offset-8">
+            <div class="alert alert-info" id="mcq-timer"><p>Time remaining: <span id="mcq-clock-static">40:00</span><span id="mcq-clock" style="display:none;"><span class="minutes"></span>:<span class="seconds"></span></span></p></div>
+        </div>
     </div>
 </div>
 <div class="panel panel-default assessment-intro-panel" id="intro">
@@ -36,6 +40,15 @@
                 </ul>
             </div>
             <div class="col-md-6">
+                <div class="list-group">
+                    <p class="list-group-item">By clicking the "Begin" button below you signify that you are the same individual as the "Logged in as" details say</p>
+                    <p class="list-group-item">You are now under examination conditions.</p>
+                    <p class="list-group-item">If you fail to complete this section, for any reason, you will not be permitted to re-attempt until a period of 20 hours have elapsed.</p>
+                    <p class="list-group-item">Your assessment time for this section starts when you press the "Begin" button.</p>
+                </div>
+
+
+
                 <p><b>Are you ready?</b></p>
             </div>
         </div>
@@ -43,13 +56,13 @@
     <div class="panel-footer">
         <div class="row">
 
-            <div class="col-md-1 col-md-offset-10"><button class="btn btn-success btn-assessment-start" id="1">Begin</button></div>
+            <div class="col-md-1 col-md-offset-11 col-xs-2"><button class="btn btn-success btn-assessment-start" id="1" onclick="startClock()">Begin</button></div>
         </div>
     </div>
 </div>
 
 
-<div class="panel panel-default assessment-question-panel" id="Q1">
+<div class="panel panel-default assessment-question-panel" id="Q1" style="display:none;">
     <div class="panel-body" id="assess">
         <div class="row">
             <div class="col-md-12">
@@ -67,19 +80,19 @@
                     <div class="row form-group radio-hide-group assessment-group">
 
                         <input type="radio" id="radio11" name="radios1" value="all">
-                        <label for="radio11" class="btn btn-default col-md-12 assessment-radio">Option 1</label>
+                        <label for="radio11" class="btn btn-default btn-block assessment-radio">Option 1</label>
 
                         <input type="radio" id="radio12" name="radios1" value="false">
-                        <label for="radio12" class="btn btn-default col-md-12 assessment-radio">Option 2</label>
+                        <label for="radio12" class="btn btn-default btn-block  assessment-radio">Option 2</label>
 
                         <input type="radio" id="radio13" name="radios1" value="true">
-                        <label for="radio13" class="btn btn-default col-md-12 assessment-radio">Option 3</label>
+                        <label for="radio13" class="btn btn-default btn-block  assessment-radio">Option 3</label>
 
                         <input type="radio" id="radio14" name="radios1" value="true">
-                        <label for="radio14" class="btn btn-default col-md-12 assessment-radio">Option 4</label>
+                        <label for="radio14" class="btn btn-default btn-block assessment-radio">Option 4</label>
 
                         <input type="radio" id="radio15" name="radios1" value="true">
-                        <label for="radio15" class="btn btn-default col-md-12 assessment-radio">Option 5</label>
+                        <label for="radio15" class="btn btn-default btn-block assessment-radio">Option 5</label>
                     </div>
                 </div>
             </div>
@@ -87,13 +100,13 @@
     </div>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-md-1 col-md-offset-11"><button class="btn btn-primary btn-assessment-toggle" id="2">Next</button></div>
+            <div class="col-md-1 col-md-offset-11 col-xs-2 col-xs-offset-10"><button class="btn btn-primary btn-assessment-toggle" id="2">Next</button></div>
         </div>
     </div>
 </div>
 
 
-<div class="panel panel-default assessment-question-panel" id="Q2">
+<div class="panel panel-default assessment-question-panel" id="Q2" style="display:none;">
     <div class="panel-body" id="assess">
         <div class="row">
             <div class="col-md-12">
@@ -111,19 +124,19 @@
                     <div class="row form-group radio-hide-group assessment-group">
 
                         <input type="checkbox" id="checkbox21" name="checkbox2" value="all">
-                        <label for="checkbox21" class="btn btn-default col-md-12 assessment-radio">Option 1</label>
+                        <label for="checkbox21" class="btn btn-default btn-block assessment-radio">Option 1</label>
 
                         <input type="checkbox" id="checkbox22" name="checkbox2" value="false">
-                        <label for="checkbox22" class="btn btn-default col-md-12 assessment-radio">Option 2</label>
+                        <label for="checkbox22" class="btn btn-default btn-block assessment-radio">Option 2</label>
 
                         <input type="checkbox" id="checkbox23" name="checkbox2" value="true">
-                        <label for="checkbox23" class="btn btn-default col-md-12 assessment-radio">Option 3</label>
+                        <label for="checkbox23" class="btn btn-default btn-block assessment-radio">Option 3</label>
 
                         <input type="checkbox" id="checkbox24" name="checkbox2" value="true">
-                        <label for="checkbox24" class="btn btn-default col-md-12 assessment-radio">Option 4</label>
+                        <label for="checkbox24" class="btn btn-default btn-block assessment-radio">Option 4</label>
 
                         <input type="checkbox" id="checkbox25" name="checkbox2" value="true">
-                        <label for="checkbox25" class="btn btn-default col-md-12 assessment-radio">Option 5</label>
+                        <label for="checkbox25" class="btn btn-default btn-block assessment-radio">Option 5</label>
                     </div>
                 </div>
             </div>
@@ -131,10 +144,10 @@
     </div>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-md-1 col-md-offset-1">
+            <div class="col-md-1 col-md-offset-1 col-xs-2">
                 <button class="btn btn-primary btn-assessment-toggle" id="1">Previous</button>
             </div>
-            <div class="col-md-1 col-md-offset-9">
+            <div class="col-md-1 col-md-offset-9  col-xs-2 col-xs-offset-8">
                 <button class="btn btn-primary btn-assessment-toggle" id="3">Next</button>
             </div>
         </div>
@@ -142,7 +155,7 @@
 </div>
 
 
-<div class="panel panel-default assessment-question-panel" id="Q3">
+<div class="panel panel-default assessment-question-panel" id="Q3" style="display:none;">
     <div class="panel-body" id="assess">
         <div class="row">
             <div class="col-md-12">
@@ -166,19 +179,19 @@
                     <div class="row form-group radio-hide-group assessment-group">
 
                         <input type="radio" id="radio31" name="radios3" value="all">
-                        <label for="radio31" class="btn btn-default col-md-12 assessment-radio">Option 1</label>
+                        <label for="radio31" class="btn btn-default btn-block assessment-radio">Option 1</label>
 
                         <input type="radio" id="radio32" name="radios3" value="false">
-                        <label for="radio32" class="btn btn-default col-md-12 assessment-radio">Option 2</label>
+                        <label for="radio32" class="btn btn-default btn-block assessment-radio">Option 2</label>
 
                         <input type="radio" id="radio33" name="radios3" value="true">
-                        <label for="radio33" class="btn btn-default col-md-12 assessment-radio">Option 3</label>
+                        <label for="radio33" class="btn btn-default btn-block assessment-radio">Option 3</label>
 
                         <input type="radio" id="radio34" name="radios3" value="true">
-                        <label for="radio34" class="btn btn-default col-md-12 assessment-radio">Option 4</label>
+                        <label for="radio34" class="btn btn-default btn-block assessment-radio">Option 4</label>
 
                         <input type="radio" id="radio35" name="radios3" value="true">
-                        <label for="radio35" class="btn btn-default col-md-12 assessment-radio">Option 5</label>
+                        <label for="radio35" class="btn btn-default btn-block assessment-radio">Option 5</label>
                     </div>
 
                 </div>
@@ -187,10 +200,10 @@
     </div>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-md-1 col-md-offset-1">
+            <div class="col-md-1 col-md-offset-1 col-xs-2">
                 <button class="btn btn-primary btn-assessment-toggle" id="2">Previous</button>
             </div>
-            <div class="col-md-1 col-md-offset-9">
+            <div class="col-md-1 col-md-offset-9 col-xs-2 col-xs-offset-8">
                 <button class="btn btn-primary btn-assessment-toggle" id="4">Next</button>
 
             </div>
@@ -199,7 +212,7 @@
 </div>
 
 
-<div class="panel panel-default assessment-question-panel" id="Q4">
+<div class="panel panel-default assessment-question-panel" id="Q4" style="display:none;">
     <div class="panel-body" id="assess">
         <div class="row">
             <div class="col-md-12">
@@ -213,7 +226,7 @@
                     <div class="col-md-12">
                         <div class="thumbnail">
                             <div class="embed-responsive embed-responsive-4by3">
-                                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/173910276" webkitallowfullscreen mozallowfullscreen allowfullscreen style="width:100%;"></iframe>
+                                <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/173910276" webkitallowfullscreen mozallowfullscreen allowfullscreen style="min-width:100%;"></iframe>
                             </div>
                         </div>
                     </div>
@@ -237,19 +250,19 @@
                     <div class="row form-group radio-hide-group assessment-group">
 
                         <input type="radio" id="radio41" name="radios4" value="all">
-                        <label for="radio41" class="btn btn-default col-md-12 assessment-radio">Option 1</label>
+                        <label for="radio41" class="btn btn-default btn-block assessment-radio">Option 1</label>
 
                         <input type="radio" id="radio42" name="radios4" value="false">
-                        <label for="radio42" class="btn btn-default col-md-12 assessment-radio">Option 2</label>
+                        <label for="radio42" class="btn btn-default btn-block assessment-radio">Option 2</label>
 
                         <input type="radio" id="radio43" name="radios4" value="true">
-                        <label for="radio43" class="btn btn-default col-md-12 assessment-radio">Option 3</label>
+                        <label for="radio43" class="btn btn-default btn-block assessment-radio">Option 3</label>
 
                         <input type="radio" id="radio44" name="radios4" value="true">
-                        <label for="radio44" class="btn btn-default col-md-12 assessment-radio">Option 4</label>
+                        <label for="radio44" class="btn btn-default btn-block assessment-radio">Option 4</label>
 
                         <input type="radio" id="radio45" name="radios4" value="true">
-                        <label for="radio45" class="btn btn-default col-md-12 assessment-radio">Option 5</label>
+                        <label for="radio45" class="btn btn-default btn-block assessment-radio">Option 5</label>
                     </div>
 
                 </div>
@@ -258,71 +271,19 @@
     </div>
     <div class="panel-footer">
         <div class="row">
-            <div class="col-md-1 col-md-offset-1">
+            <div class="col-md-1 col-md-offset-1 col-xs-2">
                 <button class="btn btn-primary btn-assessment-toggle" id="3">Previous</button>
             </div>
-            <div class="col-md-1 col-md-offset-9">
-                <button class="btn btn-primary btn-assessment-toggle" id="5">Next</button>
+            <div class="col-md-1 col-md-offset-9 col-xs-2 col-xs-offset-8">
+                <a href="/home/feedback" class="btn btn-success">Finish</a>
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="panel panel-default assessment-question-panel" id="Q5">
-    <div class="panel-body" id="assess">
-        <div class="row">
-            <div class="col-md-12">
-                <h2>Question 5 - reflective essay</h2>
-            </div>
-        </div>
 
-
-        <div class="row voffset-top-20">
-            <div class="col-md-6">
-
-                <p>You’ve completed our guide on ‘Assertiveness’</p>
-
-                <p>Consider an area of your professional life in which you would like to be more assertive.</p>
-                <p>Write a reflective piece which describes your planned application of basic assertive techniques to your personal situation. Critique the different techniques and explain which technique you are going to implement first and why you have chosen this. Discuss how this technique applies and how you would use it. Describe how you would evaluate whether your approach had been successful. This could include feedback from your mentor or others, or describing a situation in which you have applied techniques to get a better outcome for yourself.</p>
-
-            </div>
-            <div class="col-md-6">
-                <p>Write a personal account of around 500 words.</p>
-
-                <p>To find out more about our new Reflective essay format and the terms and conditions for marking download the document About reflective assessments and terms and conditions.</p>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-
-
-
-            <div class="form-group">
-                <textarea class="form-control" rows="10" width="100%"></textarea>
-
-            </div>
-            <div class="row">
-                <div class="col-md-2 col-md-offset-10 alert alert-info"><p>Word count: 0</p></div>
-            </div>
-
-
-
-
-        </div>
-    </div>
-    <div class="panel-footer">
-        <div class="row">
-            <div class="col-md-1 col-md-offset-1">
-                <button class="btn btn-primary btn-assessment-toggle" id="4">Previous</button>
-            </div>
-            <div class="col-md-1 col-md-offset-9">
-                <button class="btn btn-success">Finish</button>
-            </div>
-        </div>
-    </div>
+<div style="display:none;">
+    <div class="col-md-1 col-md-offset-9"><button class="btn btn-success btn-assessment-reset btn-demo-hideme">Show all</button></div>
+    <div class="col-md-1 col-md-offset-1"><button class="btn btn-success btn-assessment-demo btn-demo-hideme">Demo</button></div>
 </div>
-
-<div class="col-md-1 col-md-offset-9"><button class="btn btn-success btn-assessment-reset">Show all</button></div>
-<div class="col-md-1 col-md-offset-1"><button class="btn btn-success btn-assessment-demo">Demo</button></div>

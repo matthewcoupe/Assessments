@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Essay dashboard";
+}
+
+<div class="jumbotron">
+    <h1>CPPE Essay marking dashboard</h1>
+    <p class="lead">From this page you can provide feedback on essays.</p>
+    
+    <br />
+</div>
+<div class="table-responsive">
+    <table class="table table-hover" id="markdashboard">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Date submitted</th>
+                <th>Assessment</th>
+                <th>Name (GPhC)</th>
+                <th>Attempt #</th>
+                <th>Action</th>
+                <th>Date marked</th>
+                <th>Marked by</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr >
+                <td>1</td>
+                <td>10/02/2016</td>
+                <td>The test of things</td>
+                <td>Mark Smith (2043627)</td>
+                <td>1</td>
+                <td><a href="/home/mark" class="btn btn-info">Mark</a></td>
+                <td></td>
+                <td></td>
+
+            </tr>
+            <tr class="success">
+                <td>2</td>
+                <td>10/05/2016</td>
+                <td>The test of things</td>
+                <td>Pav Dipta (2345627)</td>
+                <td>3</td>
+                <td><a href="/home/feedback" class="btn btn-info">Access feedback</a></td>
+                <td>14/05/2016 - pass</td>
+                <td>Matthew Shaw</td>
+            </tr>
+            <tr class="danger">
+                <td>3</td>
+                <td>10/05/2016</td>
+                <td>CPPE quiz</td>
+                <td>Larry White (2334677)</td>
+                <td>2</td>
+                <td><a href="/home/feedback" class="btn btn-info">Access feedback</a></td>
+                <td>12/05/2016 - fail</td>
+                <td>Di Bell</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

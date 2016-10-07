@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Essay question";
+}
+
+<div class="panel panel-default assessment-question-panel" id="Q5">
+    <div class="panel-body" id="assess">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Question 5 - reflective essay</h2>
+            </div>
+        </div>
+
+
+        <div class="row voffset-top-20">
+            <div class="col-md-6">
+
+                <p>You’ve completed our guide on ‘Assertiveness’</p>
+
+                <p>Consider an area of your professional life in which you would like to be more assertive.</p>
+                <p>Write a reflective piece which describes your planned application of basic assertive techniques to your personal situation. Critique the different techniques and explain which technique you are going to implement first and why you have chosen this. Discuss how this technique applies and how you would use it. Describe how you would evaluate whether your approach had been successful. This could include feedback from your mentor or others, or describing a situation in which you have applied techniques to get a better outcome for yourself.</p>
+
+            </div>
+            <div class="col-md-6">
+                <p>Write a personal account of around 500 words (800 maximum).</p>
+
+                <p>To find out more about our new Reflective essay format and the terms and conditions for marking download the document About reflective assessments and terms and conditions.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+
+
+
+                <div class="form-group">
+                    <textarea id="essaytext" class="form-control col-md-12" rows="20" style="min-width:100%;"></textarea>
+
+                    <div id="result"></div>
+                </div>
+
+
+
+
+
+            </div>
+           
+        </div>
+        <div class="row voffset-top-20">
+            <div class="col-md-12 col-xs-12">
+                <span class="col-md-2 col-xs-5 bg-primary" id="EssayWordCount">Word count: <span id="essaycount"></span><span id="essay-count-0">0</span></span>
+                <form action="/home/">
+                    <input type="submit" href="" class="col-md-2 col-md-offset-8 col-xs-5 col-xs-offset-2 btn btn-success" id="essay-submit" value="Submit" disabled />
+                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="col-md-2 col-md-offset-10 col-xs-offset-7 col-xs-5 alert alert-danger" id="essay-word-count-issue"><p>400-800 words required</p></div>
+            </div>
+        </div>
+    </div>
+    
+</div>

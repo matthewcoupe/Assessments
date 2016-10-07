@@ -13,6 +13,36 @@ namespace Assessments.Controllers
             return View();
         }
 
+        public ActionResult MCQ()
+        {
+            return View();
+        }
+
+        public ActionResult Essay()
+        {
+            return View();
+        }
+
+        public ActionResult Feedback()
+        {
+            return View();
+        }
+
+        public ActionResult Intro()
+        {
+            return View();
+        }
+
+        public ActionResult Feedbackdashboard()
+        {
+            return View();
+        }
+
+        public ActionResult Mark()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
